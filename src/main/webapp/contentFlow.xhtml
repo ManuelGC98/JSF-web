@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>CONTENTFLOW</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:panel header="CONTENTFLOW">
+			<h:panelGrid columns="2" cellpadding="4">
+				<h:button value="CORREO" outcome="correo.xhtml" />
+				<h:button value="GALERIA" outcome="galeria.xhtml" />
+				<h:button value="CONTENTFLOW" outcome="contentFlow.xhtml" />
+				<h:button value="MEDIA" outcome="media.xhtml" />
+				<h:button value="SALIR" outcome="login.xhtml" />
+			</h:panelGrid>
+			<p:contentFlow value="#{vistaImagenes.imagenes}" var="imagen">
+				<p:graphicImage value="imagenes/#{imagen}" styleClass="content" />
+				<div class="caption">#{image}</div>
+			</p:contentFlow>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

@@ -10,15 +10,22 @@
 
 <h:body>
 	<h:form>
-
-		<p:panel header="MENU">
-			<h:panelGrid columns="2" cellpadding="4">
-				<h:button value="CORREO" outcome="correo.xhtml" />
-				<h:button value="GALERIA" outcome="galeria.xhtml" />
-				<h:button value="CONTENTFLOW" outcome="contentFlow.xhtml" />
-				<h:button value="MEDIA" outcome="media.xhtml" />
-				<h:button value="SALIR" outcome="login.xhtml" />
-			</h:panelGrid>
+		<p:slideMenu style="width:180px">
+			<p:menuitem value="Correo" outcome="correo.xhtml" />
+			<p:separator />
+			<p:submenu label="Galerias">
+				<p:menuitem value="Galeria de fotos" outcome="galeria.xhtml" />
+				<p:separator />
+				<p:menuitem value="Content Flow" outcome="contentFlow.xhtml" />
+				<p:separator />
+				<p:menuitem value="Media" outcome="media.xhtml" />
+			</p:submenu>
+			<p:separator />
+			<p:menuitem value="Informacion" outcome="informacion.xhtml" />
+			<p:separator />
+			<p:menuitem value="Salir" outcome="login.xhtml" />
+		</p:slideMenu>
+		<p:panel header="Correo">
 			<h:panelGrid columns="2" cellpadding="4">
 				<h:outputText value="Email: " />
 				<p:inputText value="#{correo.email}" />
